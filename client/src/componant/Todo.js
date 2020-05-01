@@ -1,4 +1,7 @@
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
+
+import './Todo.css'
+
 
 export default function Todo(){
     const [todo,setTodo]=useState('')
@@ -12,10 +15,10 @@ export default function Todo(){
         setTodo('')
     }
     return (
-        <div>
-            <input name="todo" value={todo} onChange={handelInputChange}/>
-            <button onClick={addTodoToList}>add todo</button>
-            <ul>{todoList.map((todo,index)=><li key={index}>{todo}</li>)}</ul>
+        <div className="todo-Container">
+            <input className="todo-Container__input" name="todo" value={todo} onChange={handelInputChange}/>
+            <button className="todo-Container__button" onClick={addTodoToList}>add todo</button>
+            <ul className="todo-Container__ul">{todoList.map((todo,index)=><li key={index}>{todo}</li>)}</ul>
         </div>
     )
 }
